@@ -1,0 +1,16 @@
+syntax="proto3";
+
+package butler.api_v1;
+
+option go_package = "./api_v1";
+
+message GetAlertRequest {
+    string alert_details = 1;
+}
+
+message GetAlertResponse {
+    map<string, string> alert = 1;
+}
+service WebService {
+    rpc GetAlert(GetAlertRequest) returns (GetAlertResponse){}
+}
